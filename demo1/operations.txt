@@ -1,0 +1,35 @@
+Rich File Index
+Step 0. Go to solr installation directory
+cd Desktop\solr-tech-share\solr-5.2.1
+
+Step 1. Create a core
+bin\solr.cmd create -c demo1
+
+Step 2. Add documents to the core
+java -Dauto -Dc=demo1 -jar example\exampledocs\post.jar ..\demo1\expdocs
+
+Step 3. Search documents according to keywords
+http://localhost:8983/solr/demo1/select?q=solr&wt=json&indent=true
+
+Step 4. Delete documents from the core
+http://localhost:8983/solr/demo1/update?stream.body=<delete><query>*:*</query></delete>&commit=true
+
+Step 5. Delete the core
+bin\solr.cmd delete -c demo1
+
+BBC Best Novels
+bin\solr.cmd create -c best_novels
+java -Dauto -Dc=best_novels -jar example\exampledocs\post.jar ..\demo1\BBC_BEST_NOVELS
+http://localhost:8983/solr/best_novels/select?q=love&fl=id&wt=json&indent=true
+time,love,dark,home
+
+
+金庸小说全集
+bin\solr.cmd create -c jinyong_collections
+java -Dauto -Dc=jinyong_collections -jar example\exampledocs\post.jar ..\demo1\jinyong_collections
+
+
+
+
+
+

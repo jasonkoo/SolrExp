@@ -1,0 +1,6 @@
+Step 1. Edit schema.xml
+Step 2. Create a core according to the schema
+bin\solr.cmd create -c demo2 -d C:\Users\gulei2\Desktop\solr-tech-share\demo2\geospatial-search\conf
+Step 3. Generate random data
+Step 4. Build index
+Step 5. Search

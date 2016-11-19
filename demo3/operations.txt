@@ -1,0 +1,8 @@
+First Version
+solrctl instancedir --generate solr_configs/device
+solrctl instancedir --create device solr_configs/device
+solrctl collection --create device -s 6 -r 2
+350 docs/sec
+Second Version
+sudo -u hdfs hadoop jar /data/cloudera/parcels/CDH-5.2.1-1.cdh5.2.1.p0.12/jars/search-mr-1.0.0-cdh5.2.1-job.jar org.apache.solr.hadoop.MapReduceIndexerTool --morphline-file /tmp/device-batch-morphline.conf --morphline-id device_batch --output-dir hdfs://PUSH-007:8020/flume/domestic/device_tags_indexed --zk-host  PUSH-013:2181,PUSH-012:2181,PUSH-018:2181,PUSH-010:2181,PUSH-011:2181/solr --collection device_batch --go-live hdfs://PUSH-007:8020/flume/domestic/device_tags
+
